@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<array>
+	<dict>
+		<key>nameKey</key>
+		<string>序</string>
+		<key>imageKey</key>
+		<string>top_01.png</string>
+	</dict>
+	<dict>
+		<key>nameKey</key>
+		<string>花灯戏</string>
+		<key>imageKey</key>
+		<string>top_02.png</string>
+	</dict>
+	<dict>
+		<key>nameKey</key>
+		<string>节日</string>
+		<key>imageKey</key>
+		<string>top_03.png</string>
+	</dict>
+	<dict>
+		<key>nameKey</key>
+		<string>甜瓜</string>
+		<key>imageKey</key>
+		<string>top_04.png</string>
+	</dict>
+	<dict>
+		<key>nameKey</key>
+		<string>猕猴桃</string>
+		<key>imageKey</key>
+		<string>top_05.png</string>
+	</dict>
+	<dict>
+		<key>nameKey</key>
+		<string>柑橘</string>
+		<key>imageKey</key>
+		<string>top_06.png</string>
+	</dict>
+</array>
+</plist>
