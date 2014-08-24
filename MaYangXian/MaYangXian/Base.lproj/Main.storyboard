@@ -20,7 +20,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="top_1" translatesAutoresizingMaskIntoConstraints="NO" id="pSd-uO-3GF">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="top_01" translatesAutoresizingMaskIntoConstraints="NO" id="pSd-uO-3GF">
                                             <rect key="frame" x="0.0" y="-3" width="320" height="143"/>
                                             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                         </imageView>
@@ -99,7 +99,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="关于我们" id="Wll-dd-fIt">
-                        <barButtonItem key="rightBarButtonItem" title="完成" id="9uk-lT-kyC">
+                        <barButtonItem key="rightBarButtonItem" title="完成" style="plain" id="9uk-lT-kyC">
                             <connections>
                                 <action selector="doneButton:" destination="CR4-e2-ugW" id="POF-WA-g1C"/>
                             </connections>
@@ -204,7 +204,7 @@
     </scenes>
     <resources>
         <image name="about" width="20" height="20"/>
-        <image name="top_1" width="623" height="413"/>
+        <image name="top_01" width="434" height="196"/>
         <image name="top_over" width="320" height="21"/>
     </resources>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

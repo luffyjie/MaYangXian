@@ -76,6 +76,10 @@
         
         // 初始化几张图片 maybe 用户会滚动
         [self loadScrollViewWithPage:1];
+        [self loadScrollViewWithPage:2];
+        [self loadScrollViewWithPage:3];
+        [self loadScrollViewWithPage:4];
+        [self loadScrollViewWithPage:5];
         [self loadScrollViewWithPage:0];
         
     }
