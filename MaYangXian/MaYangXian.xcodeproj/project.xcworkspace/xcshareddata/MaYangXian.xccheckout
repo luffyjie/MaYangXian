@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>8DB61C0D-6D20-4FD6-8E04-5F6F89A6D058</string>
+	<key>IDESourceControlProjectName</key>
+	<string>MaYangXian</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>ED1EE449-6404-4394-B7A1-F96F0FE6BB9D</key>
+		<string>https://github.com/luffyjie/MaYangXian.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>MaYangXian/MaYangXian.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>ED1EE449-6404-4394-B7A1-F96F0FE6BB9D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/luffyjie/MaYangXian.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>ED1EE449-6404-4394-B7A1-F96F0FE6BB9D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>ED1EE449-6404-4394-B7A1-F96F0FE6BB9D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>MaYangXianShare</string>
+		</dict>
+	</array>
+</dict>
+</plist>
