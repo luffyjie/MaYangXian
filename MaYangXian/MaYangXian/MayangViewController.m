@@ -88,12 +88,21 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+    //update by lujie 由于此方法调用十分频繁，cell的标示声明成静态变量有利于性能优化 2014-09-29
+    static NSString *firstcellIdentifier=@"photoIdentifier";
+    static NSString *towncellIdentifier=@"townIdentifier";
     if (indexPath.row == 0) {
-        MayangPhotoViewCell *firstCell = [[MayangPhotoViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"photoIdentifier"];
+        MayangPhotoViewCell *firstCell = [tableView dequeueReusableCellWithIdentifier:firstcellIdentifier];
+        if (!firstCell) {
+            firstCell = [[MayangPhotoViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:firstcellIdentifier];
+        }
         firstCell.selectionStyle = UITableViewCellSelectionStyleNone;
         return firstCell;
     }else{
-        MayangTableViewCell *townCell = [[MayangTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"MyIdentifier"];
+        MayangTableViewCell *townCell = [tableView dequeueReusableCellWithIdentifier:towncellIdentifier];
+        if (!townCell) {
+            townCell = [[MayangTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:towncellIdentifier];
+        }
         townCell.town = [self.townList objectAtIndex:indexPath.row - 1];
         return townCell;
     }

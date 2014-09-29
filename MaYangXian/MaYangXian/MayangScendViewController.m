@@ -39,10 +39,11 @@
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    // dequeue a RecipeTableViewCell, then set its towm to the towm for the current row
-    MayangScendTableViewCell *articleCell = (MayangScendTableViewCell *)[tableView dequeueReusableCellWithIdentifier:@"sconddentifier"];
-    if (articleCell == nil){
-        articleCell = [[MayangScendTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"sconddentifier"];
+    //update by lujie 由于此方法调用十分频繁，cell的标示声明成静态变量有利于性能优化 2014-09-29
+    static NSString *articleIdentifier=@"articleIdentifier";
+    MayangScendTableViewCell *articleCell = [tableView dequeueReusableCellWithIdentifier:articleIdentifier];
+    if (!articleCell){
+        articleCell = [[MayangScendTableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:articleIdentifier];
     }
     articleCell.article = [self.articleList objectAtIndex:indexPath.row];
     return articleCell;

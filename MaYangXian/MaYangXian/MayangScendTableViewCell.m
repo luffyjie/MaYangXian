@@ -91,7 +91,7 @@
 -(void)setArticle:(Article *) newArticle{
     if (newArticle != _article) {
         _article = newArticle;
-        leftimageView.image = [UIImage imageNamed:@"left_tip.png"];
+        leftimageView.image = [UIImage imageNamed:@"left_tip"];
         rightimageView.image = _article.thumbnailImage;
         titleLabel.text = _article.title;
         
