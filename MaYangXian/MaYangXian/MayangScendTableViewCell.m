@@ -94,6 +94,15 @@
         leftimageView.image = [UIImage imageNamed:@"left_tip"];
         rightimageView.image = _article.thumbnailImage;
         titleLabel.text = _article.title;
+        //update by lujie 2014-09-29 content太长，必须截取然后处理，不然有卡顿的性能影响
+        NSString *contentText;
+        if (_article.content.length > 60) {
+            //update by lujie 如果substringIndex 过界会直接崩溃
+            contentText = [_article.content substringToIndex:60];
+        }else
+        {
+            contentText = _article.content;
+        }
         
         //设置文字内容的样式参数
         contentLabel.adjustsFontSizeToFitWidth = YES;
@@ -107,7 +116,7 @@
         NSDictionary *attributes = @{
                                      NSFontAttributeName:[UIFont systemFontOfSize:15],
                                      NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]};
-        contentLabel.attributedText = [[NSAttributedString alloc]initWithString:  _article.content attributes:attributes];
+        contentLabel.attributedText = [[NSAttributedString alloc]initWithString: contentText attributes:attributes];
 
     }
 }
