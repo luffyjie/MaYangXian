@@ -1,8 +1,10 @@
 MaYangXian
 ==========
 
-about my hometown 
+version 1.0
 
-这是我的第一个ios应用，目前是介绍和宣传自己的家乡。app的内容是县城及所有乡镇，介绍累县城的历史和名胜古迹和特产。
+About my hometown
 
-当前版本应用使用的是本地静态数据，里面使用了友盟的sdk，对用户和运营数据进行统计分析。
+This is my first ios app, I make it just for my hometown. In this app, I collect 26 town history and story. You can detail see what happended in this 20 year in my hometown. at the same time many sepeacil food and beauty spot present for all of us. welcome to my hometown.
+
+in this version, use youmeng sdk for recive logs from user。
