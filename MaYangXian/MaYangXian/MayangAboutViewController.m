@@ -56,14 +56,17 @@
 }
 
 - (IBAction)shareButton:(id)sender {
-    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"ShareSDK"  ofType:@"jpg"];
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"Icon-72@2x"  ofType:@"png"];
+    UIImageView *xx = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:imagePath]];
+    xx.frame = CGRectMake(10, 10, 100, 100);
+    [self.view addSubview:xx];
     //构造分享内容
     id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
-                                       defaultContent:@"默认分享内容，没内容时显示"
+                                       defaultContent:@"APP应用《风情麻阳》"
                                                 image:[ShareSDK imageWithPath:imagePath]
-                                                title:@"ShareSDK"
-                                                  url:@"http://www.sharesdk.cn"
-                                          description:@"这是一条测试信息"
+                                                title:@"APP应用《风情麻阳》"
+                                                  url:@"http://2199572.blog.51cto.com/2189572/1561471"
+                                          description:@"首款详细介绍麻阳历史，风景，特产，各个乡镇的app应用。(免费)"
                                             mediaType:SSPublishContentMediaTypeNews];
     
     [ShareSDK showShareActionSheet:nil
