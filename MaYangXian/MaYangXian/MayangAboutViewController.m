@@ -57,15 +57,12 @@
 
 - (IBAction)shareButton:(id)sender {
     NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"Icon-72@2x"  ofType:@"png"];
-    UIImageView *xx = [[UIImageView alloc] initWithImage:[UIImage imageWithContentsOfFile:imagePath]];
-    xx.frame = CGRectMake(10, 10, 100, 100);
-    [self.view addSubview:xx];
     //构造分享内容
     id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
                                        defaultContent:@"APP应用《风情麻阳》"
                                                 image:[ShareSDK imageWithPath:imagePath]
                                                 title:@"APP应用《风情麻阳》"
-                                                  url:@"http://2199572.blog.51cto.com/2189572/1561471"
+                                                  url:@"https://itunes.apple.com/cn/app/feng-qing-ma-yang/id912144284?mt=8"
                                           description:@"首款详细介绍麻阳历史，风景，特产，各个乡镇的app应用。(免费)"
                                             mediaType:SSPublishContentMediaTypeNews];
     
