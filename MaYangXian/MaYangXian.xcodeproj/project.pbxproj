@@ -70,6 +70,11 @@
 		E9B8ABD219ACD27200D03C0F /* Icon-Small-50@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B8ABD119ACD27200D03C0F /* Icon-Small-50@2x.png */; };
 		E9B8ABD419ACD32300D03C0F /* Icon-72@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9B8ABD319ACD32300D03C0F /* Icon-72@2x.png */; };
 		E9C4154519A91F1600BA3B50 /* iTunesArtwork@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = E9C4154419A91F1600BA3B50 /* iTunesArtwork@2x.png */; };
+		E9F2D5E019F24EEE00E2B31B /* Appirater.m in Sources */ = {isa = PBXBuildFile; fileRef = E9F2D5DD19F24EEE00E2B31B /* Appirater.m */; };
+		E9F2D5E119F24EEE00E2B31B /* Appirater.podspec.json in Resources */ = {isa = PBXBuildFile; fileRef = E9F2D5DE19F24EEE00E2B31B /* Appirater.podspec.json */; };
+		E9F2D5E519F24F5700E2B31B /* AppiraterLocalizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = E9F2D5E319F24F5700E2B31B /* AppiraterLocalizable.strings */; };
+		E9F2D5E719F24F7400E2B31B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F2D5E619F24F7400E2B31B /* CFNetwork.framework */; };
+		E9F2D5E919F24F7C00E2B31B /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E9F2D5E819F24F7C00E2B31B /* StoreKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -164,6 +169,13 @@
 		E9B8ABD119ACD27200D03C0F /* Icon-Small-50@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-Small-50@2x.png"; sourceTree = "<group>"; };
 		E9B8ABD319ACD32300D03C0F /* Icon-72@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Icon-72@2x.png"; sourceTree = "<group>"; };
 		E9C4154419A91F1600BA3B50 /* iTunesArtwork@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iTunesArtwork@2x.png"; sourceTree = "<group>"; };
+		E9F2D5DC19F24EEE00E2B31B /* Appirater.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Appirater.h; sourceTree = "<group>"; };
+		E9F2D5DD19F24EEE00E2B31B /* Appirater.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Appirater.m; sourceTree = "<group>"; };
+		E9F2D5DE19F24EEE00E2B31B /* Appirater.podspec.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Appirater.podspec.json; sourceTree = "<group>"; };
+		E9F2D5DF19F24EEE00E2B31B /* AppiraterDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppiraterDelegate.h; sourceTree = "<group>"; };
+		E9F2D5E419F24F5700E2B31B /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = AppiraterLocalizable.strings; sourceTree = "<group>"; };
+		E9F2D5E619F24F7400E2B31B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E9F2D5E819F24F7C00E2B31B /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +183,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E9F2D5E919F24F7C00E2B31B /* StoreKit.framework in Frameworks */,
+				E9F2D5E719F24F7400E2B31B /* CFNetwork.framework in Frameworks */,
 				E971107D19E3BF460029A088 /* libsqlite3.dylib in Frameworks */,
 				E971107B19E3BF390029A088 /* libstdc++.dylib in Frameworks */,
 				E971107919E3BF0C0029A088 /* Security.framework in Frameworks */,
@@ -214,6 +228,7 @@
 		E96E8ED41984914800642531 = {
 			isa = PBXGroup;
 			children = (
+				E9F2D5DB19F24E7100E2B31B /* Appirater */,
 				E971104119E3AFF00029A088 /* ShareSDK */,
 				E97925F019A7A11600C8698F /* UmSDK */,
 				E9772E681999D74800ECFA0B /* Resources */,
@@ -237,6 +252,8 @@
 		E96E8EDF1984914800642531 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				E9F2D5E819F24F7C00E2B31B /* StoreKit.framework */,
+				E9F2D5E619F24F7400E2B31B /* CFNetwork.framework */,
 				E971107C19E3BF460029A088 /* libsqlite3.dylib */,
 				E971107A19E3BF390029A088 /* libstdc++.dylib */,
 				E971107819E3BF0C0029A088 /* Security.framework */,
@@ -441,6 +458,26 @@
 			name = UmSDK;
 			sourceTree = "<group>";
 		};
+		E9F2D5DB19F24E7100E2B31B /* Appirater */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2D5E219F24F5700E2B31B /* zh-Hans.lproj */,
+				E9F2D5DC19F24EEE00E2B31B /* Appirater.h */,
+				E9F2D5DD19F24EEE00E2B31B /* Appirater.m */,
+				E9F2D5DE19F24EEE00E2B31B /* Appirater.podspec.json */,
+				E9F2D5DF19F24EEE00E2B31B /* AppiraterDelegate.h */,
+			);
+			name = Appirater;
+			sourceTree = "<group>";
+		};
+		E9F2D5E219F24F5700E2B31B /* zh-Hans.lproj */ = {
+			isa = PBXGroup;
+			children = (
+				E9F2D5E319F24F5700E2B31B /* AppiraterLocalizable.strings */,
+			);
+			path = "zh-Hans.lproj";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -532,6 +569,7 @@
 				E971106219E3AFF00029A088 /* ShareSDKLocalizable.strings in Resources */,
 				E98625EC1999E19A00BCEB63 /* Icon-72.png in Resources */,
 				E971106619E3AFF00029A088 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
+				E9F2D5E119F24EEE00E2B31B /* Appirater.podspec.json in Resources */,
 				E9500A4C1986048C00C1CADD /* Images.xcassets in Resources */,
 				E9C4154519A91F1600BA3B50 /* iTunesArtwork@2x.png in Resources */,
 				E953C2E719E648E3003E8ECD /* reader.strings in Resources */,
@@ -539,6 +577,7 @@
 				E98625E81999E19A00BCEB63 /* Icon.png in Resources */,
 				E92725E319A9A66300F5D102 /* Icon-120@2x.png in Resources */,
 				E96E8EEB1984914800642531 /* InfoPlist.strings in Resources */,
+				E9F2D5E519F24F5700E2B31B /* AppiraterLocalizable.strings in Resources */,
 				E9B8ABCE19ACD03900D03C0F /* iTunesArtwork.png in Resources */,
 				E96E8EF41984914800642531 /* Main.storyboard in Resources */,
 				E98625EA1999E19A00BCEB63 /* Icon-Small.png in Resources */,
@@ -569,6 +608,7 @@
 				E96E8F401984F50E00642531 /* MayangDetailViewController.m in Sources */,
 				E96E8F2F1984AA5900642531 /* MayangPhotoViewCell.m in Sources */,
 				E96E8F1D1984985F00642531 /* Article.m in Sources */,
+				E9F2D5E019F24EEE00E2B31B /* Appirater.m in Sources */,
 				E96E8EED1984914800642531 /* main.m in Sources */,
 				E96E8F1A1984965F00642531 /* Town.m in Sources */,
 				E96E8EF11984914800642531 /* MayangAppDelegate.m in Sources */,
@@ -627,6 +667,14 @@
 				E971104C19E3AFF00029A088 /* zh-Hans */,
 			);
 			name = ShareSDKLocalizable.strings;
+			sourceTree = "<group>";
+		};
+		E9F2D5E319F24F5700E2B31B /* AppiraterLocalizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E9F2D5E419F24F5700E2B31B /* zh-Hans */,
+			);
+			name = AppiraterLocalizable.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
