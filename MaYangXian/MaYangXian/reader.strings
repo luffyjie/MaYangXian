@@ -1,0 +1,24 @@
+/*
+ 开发记录.strings
+ MaYangXian
+ 
+ Created by lujie on 14-10-9.
+ Copyright (c) 2014年 LuJie. All rights reserved.
+ */
+//记录每个版本的变化和改进
+/*
+ 1.0
+ 完成整个程序发布上线
+ */
+/*
+ 1.1
+ 修正了部分图片因为gif被转换成png，显示不出来的bug
+ */
+/*
+ 1.2
+ 修正了二级子项table卡的bug，因为显示的简介内容是正文，所以性能下降。
+ */
+/*
+ 1.3
+ 添加了社会化分享，新浪微博，微信，QQ空间
+ */

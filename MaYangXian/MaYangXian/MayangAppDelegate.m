@@ -8,6 +8,12 @@
 
 #import "MayangAppDelegate.h"
 #import "MobClick.h"
+#import <ShareSDK/ShareSDK.h>
+#import "WeiboSDK.h"
+#import <TencentOpenAPI/QQApiInterface.h>
+#import <TencentOpenAPI/TencentOAuth.h>
+#import "WXApi.h"
+#import "Appirater.h"
 
 #define UIColorFromRGB(rgbValue) [UIColor colorWithRed:((float)((rgbValue & 0xFF0000) >> 16))/255.0 green:((float)((rgbValue & 0xFF00) >> 8))/255.0 blue:((float)(rgbValue & 0xFF))/255.0 alpha:1.0]
 
@@ -61,6 +67,38 @@
     [MobClick startWithAppkey:@"53f76a8cfd98c585f200ca45" reportPolicy:BATCH channelId:@"appStore"];
     NSString *version = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
     [MobClick setAppVersion:version];
+    
+    //社会化分享
+    [ShareSDK registerApp:@"3479e6946ca4"];
+    //添加新浪微博应用 注册网址 http://open.weibo.com
+    [ShareSDK connectSinaWeiboWithAppKey:@"2063442920"
+                               appSecret:@"c238ed2a3ad29529edace292a779702d"
+                             redirectUri:@"http://www.sharesdk.cn"];
+    
+    //当使用新浪微博客户端分享的时候需要按照下面的方法来初始化新浪的平台
+    [ShareSDK  connectSinaWeiboWithAppKey:@"2063442920"
+                                appSecret:@"c238ed2a3ad29529edace292a779702d"
+                              redirectUri:@"http://www.sharesdk.cn"
+                              weiboSDKCls:[WeiboSDK class]];
+    
+    //添加QQ空间应用  注册网址  http://connect.qq.com/intro/login/
+    [ShareSDK connectQZoneWithAppKey:@"1103280422"
+                           appSecret:@"zINREwVG4gsu31uV"
+                   qqApiInterfaceCls:[QQApiInterface class]
+                     tencentOAuthCls:[TencentOAuth class]];
+    
+    //添加微信应用 注册网址 http://open.weixin.qq.com
+    [ShareSDK connectWeChatWithAppId:@"wx2e7da0b48054d1a8"
+                           wechatCls:[WXApi class]];
+    
+    //添加用户去打分的提醒 2014－10-18 周期是五天提醒一次
+    [Appirater setAppId:@"912144284"];
+    [Appirater setDaysUntilPrompt:5];
+    [Appirater setUsesUntilPrompt:0];
+    [Appirater setSignificantEventsUntilPrompt:-1];
+    [Appirater setTimeBeforeReminding:2];
+    [Appirater setDebug:NO];
+    [Appirater appLaunched:YES];
     
     return YES;
 }
@@ -117,5 +155,25 @@
     [UIView commitAnimations];
     
 }
+
+#pragma 微信分享
+
+- (BOOL)application:(UIApplication *)application  handleOpenURL:(NSURL *)url
+{
+    return [ShareSDK handleOpenURL:url
+                        wxDelegate:self];
+}
+
+- (BOOL)application:(UIApplication *)application
+            openURL:(NSURL *)url
+  sourceApplication:(NSString *)sourceApplication
+         annotation:(id)annotation
+{
+    return [ShareSDK handleOpenURL:url
+                 sourceApplication:sourceApplication
+                        annotation:annotation
+                        wxDelegate:self];
+}
+
 
 @end

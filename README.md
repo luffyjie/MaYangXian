@@ -1,6 +1,4 @@
 MaYangXian
-==========
-version 1.0
 
 About my hometown 
 

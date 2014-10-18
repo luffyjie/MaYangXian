@@ -7,6 +7,7 @@
 //
 
 #import "MayangAboutViewController.h"
+#import <ShareSDK/ShareSDK.h>
 
 @interface MayangAboutViewController ()
 @property (weak, nonatomic) IBOutlet UITextView *aboutView;
@@ -43,7 +44,7 @@
     paragraphStyle.paragraphSpacing = 5.f;
     paragraphStyle.alignment = NSTextAlignmentLeft;
     NSDictionary *attributes = @{ NSFontAttributeName:[UIFont systemFontOfSize:13], NSParagraphStyleAttributeName:paragraphStyle, NSForegroundColorAttributeName:[UIColor blackColor]};
-    NSString *about = @"风情麻阳 (版本1.0)\n开发目的及数据来源：\n全部来自互联网，麻阳政府门户网站。出于自己兴趣爱好，目的介绍宣传自己的家乡，详细介绍了各个乡镇特色，是了解麻阳的最佳应用。也是麻阳自助游的最佳应用。\n本软件开发者：路杰 \n个人简介：05年毕业于麻阳民族中学，12年毕业于中南民族大学 曾在同花顺，唯品会工作，目前是一名软件工程师。\n联系方式：lujie2012@163.com \n最后感谢我的家人 感谢分享麻阳相关资料的朋友";
+    NSString *about = @"风情麻阳 (版本1.3)\n开发目的及数据来源：\n全部来自互联网，麻阳政府门户网站。出于自己兴趣爱好，目的介绍宣传自己的家乡，详细介绍了各个乡镇特色，是了解麻阳的最佳应用。也是麻阳自助游的最佳应用。\n本软件开发者：路杰 \n个人简介：05年毕业于麻阳民族中学，12年毕业于中南民族大学 曾在同花顺，唯品会工作，目前是一名软件工程师。\n联系方式：lujie2012@163.com \n最后感谢我的家人 感谢分享麻阳相关资料的朋友";
     self.aboutView .attributedText = [[NSAttributedString alloc]initWithString: about attributes:attributes];
     self.aboutView.autoresizingMask = UIViewAutoresizingFlexibleHeight;
 }
@@ -53,6 +54,36 @@
         
     }];
 }
+
+- (IBAction)shareButton:(id)sender {
+    NSString *imagePath = [[NSBundle mainBundle] pathForResource:@"Icon-72@2x"  ofType:@"png"];
+    //构造分享内容
+    id<ISSContent> publishContent = [ShareSDK content:@"分享内容"
+                                       defaultContent:@"APP应用《风情麻阳》"
+                                                image:[ShareSDK imageWithPath:imagePath]
+                                                title:@"APP应用《风情麻阳》"
+                                                  url:@"https://itunes.apple.com/cn/app/feng-qing-ma-yang/id912144284?mt=8"
+                                          description:@"首款详细介绍麻阳历史，风景，特产，各个乡镇的app应用。(免费)"
+                                            mediaType:SSPublishContentMediaTypeNews];
+    
+    [ShareSDK showShareActionSheet:nil
+                         shareList:nil
+                           content:publishContent
+                     statusBarTips:YES
+                       authOptions:nil
+                      shareOptions: nil
+                            result:^(ShareType type, SSResponseState state, id<ISSPlatformShareInfo> statusInfo, id<ICMErrorInfo> error, BOOL end) {
+                                if (state == SSResponseStateSuccess)
+                                {
+                                    NSLog(@"分享成功");
+                                }
+                                else if (state == SSResponseStateFail)
+                                {
+                                    NSLog(@"分享失败,错误码:%d,错误描述:%@", [error errorCode], [error errorDescription]);
+                                }
+                            }];
+}
+
 
 -(BOOL)textViewShouldBeginEditing:(UITextView *)textView
 {
